@@ -134,7 +134,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new DobbeltLenketListeIterator();
+        return new  DobbeltLenketListeIterator();
     }
 
 
