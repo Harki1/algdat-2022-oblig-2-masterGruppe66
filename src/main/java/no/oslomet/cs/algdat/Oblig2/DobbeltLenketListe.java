@@ -5,7 +5,9 @@ package no.oslomet.cs.algdat.Oblig2;
 
 
 import java.util.Comparator;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -161,12 +163,23 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         @Override
         public T next() {
-            throw new UnsupportedOperationException();
-        }
+            if (iteratorendringer != endringer)
+            {
+                throw new ConcurrentModificationException();
+            }
+            else if (!hasNext()){
+                throw new NoSuchElementException();
+            }
+            fjernOK = true;
+            T ReturnVerdi = denne.verdi;
+            denne = denne.neste;
+            return ReturnVerdi;
+
+    }
 
         @Override
         public void remove() {
-            throw new UnsupportedOperationException();
+
         }
 
     } // class DobbeltLenketListeIterator
