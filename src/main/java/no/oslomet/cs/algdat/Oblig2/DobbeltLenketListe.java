@@ -117,6 +117,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     public T hent(int indeks) {
         throw new UnsupportedOperationException();
 
+
     }
 
     @Override
@@ -131,12 +132,86 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException();
+        if (verdi == null){
+            return false;
+        }
+        Node <T> a = hode;
+        Node <T> b;
+        Node <T> c;
+        for (int i = 0; i < antall; i++){
+
+            while (a.verdi.equals(verdi)){
+                if (antall == 1){
+                    hode = hale;
+                    hale = null;
+                    break;
+                }
+                if (i == 0){
+                    a = a.neste;
+                    a.forrige = null;
+                    hode = a;
+                    break;
+                }
+                else if (i < antall - 1){
+
+                    a = a.forrige;
+                    b = a.neste;
+                    c = b.neste;
+
+                    a.neste = c;
+                    c.forrige = a;
+
+                    break;
+
+                }else {
+                    b = a.forrige;
+                    b.neste = null;
+                    hale = b;
+                    break;
+                }
+            }
+            if (i == antall - 1){
+                return false;
+            }
+            a = a.neste;
+        }
+        antall --;
+        endringer++;
+
+        return true;
     }
 
     @Override
     public T fjern(int indeks) {
-        throw new UnsupportedOperationException();
+    indeksKontroll(indeks, false);
+        T verdiUt;
+    while (indeks == 0){
+
+            if (antall == 1){
+                verdiUt = hode.verdi;
+                hale = hode;
+                hode = null;
+            }else{
+                verdiUt = hode.verdi;
+                hode = hode.neste;
+                hode.forrige = null;
+            }
+        }
+    if (indeks == antall -1 ){
+        verdiUt = hale.verdi;
+        hale = hale.forrige;
+        hale.neste = null;
+    }else {
+        Node<T> a = finnNode(indeks - 1);
+        Node<T> b = a.neste;
+        Node<T> c = b.neste;
+        verdiUt = b.verdi;
+        a.neste = c;
+        c.forrige = a;
+    }
+    antall--;
+    endringer++;
+    return verdiUt;
     }
 
     @Override
