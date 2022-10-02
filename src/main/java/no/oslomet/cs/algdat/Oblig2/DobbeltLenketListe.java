@@ -41,7 +41,23 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public DobbeltLenketListe(T[] a) {
-        throw new UnsupportedOperationException();
+        for (int i = 0; i < a.length; i++){
+
+        }
+        hode = new Node<>(a[0]);
+        antall = 0;
+        Node <T> forrige = hode;
+        for (int i = 0; i < a.length; i++){
+            if (a[i] == null){
+                continue;
+            }else{
+            Node<T> j = new Node<>(a[i],forrige,null);
+            forrige.neste = j;
+            forrige = j;
+            antall++;
+                }
+
+        }
     }
 
     public Liste<T> subliste(int fra, int til) {
@@ -50,12 +66,17 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int antall() {
-        throw new UnsupportedOperationException();
+        return antall;
     }
 
     @Override
     public boolean tom() {
-        throw new UnsupportedOperationException();
+        if (hode== null){
+        return false;}
+        else {
+            return true;
+        }
+
     }
 
     @Override
