@@ -9,7 +9,7 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import java.util*;
+import java.util.*;
 public class DobbeltLenketListe<T> implements Liste<T> {
 
     /**
