@@ -613,7 +613,6 @@ class Oblig2Test {
         try {
             liste.leggInn(0, 4);
         } catch (Exception e) {
-            System.out.println(e);
             System.out.println
                     ("Oppgave 5g: Feil i indekssjekken! 0 <= indeks <= antall er tillatt!");
 
