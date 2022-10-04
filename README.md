@@ -2,7 +2,7 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
-* Mahdi Ahmed Yusuf, S364517, s3645176@oslomet.no
+* Mahdi Ahmed Yusuf, S364517, s364517@oslomet.no
 * Harkirat singh, S362077, s362077@oslomet.no
 * Hassan Mehmod Hussain, S354545, s354545@oslomet.no
 * Ibrahima Secka, S355423, s355423@oslomet.no 
