@@ -39,7 +39,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private int endringer;         // antall endringer i listen
 
     public DobbeltLenketListe() {
-
+        antall = 0;
+        endringer = 0;
     }
 
     public DobbeltLenketListe(T[] a) {
@@ -102,12 +103,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public void leggInn(int indeks, T verdi) {
-        indeksKontroll(indeks, true);
-        if(indeks>antall){
-            throw new IndexOutOfBoundsException("indeks er ugyldig");
+        if(verdi.equals(null)){
+            throw new NoSuchElementException("verdi er lik null");
         }
-        if(indeks<0){
-            throw new IndexOutOfBoundsException("indeks er ugyldig");
+        indeksKontroll(indeks, true);
+        if(antall == 0){
+            Node<T> verdiNode = new Node<>(verdi);
+            hode = verdiNode;
+            hale = verdiNode;
         }
         if(indeks==0){
             Node<T> forjeverdi = hode;
@@ -127,6 +130,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             forjeverdi.forrige.neste = verdiNode;
             forjeverdi.forrige = verdiNode;
         }
+        endringer++;
+        antall++;
     }
 
     @Override
