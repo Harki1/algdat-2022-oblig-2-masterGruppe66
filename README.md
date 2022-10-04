@@ -2,16 +2,22 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
-* Navn Navnesen, S123456, s123456@oslomet.no
-* ...
+* Mahdi Ahmed Yusuf, S364517, s3645176@oslomet.no
+* Harkirat singh, S362077, s362077@oslomet.no
+* Hassan Mehmod Hussain, S354545, s354545@oslomet.no
+* Ibrahima Secka, S355423, s355423@oslomet.no 
+* Sabasan Selvachandran, s362076, s362076@oslomet.no
 
 # Arbeidsfordeling
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
-* Per har hatt hovedansvar for oppgave 1, 3, og 5. 
-* Else har hatt hovedansvar for oppgave 2, 4, og 6. 
-* Fatima har hatt hovedansvar for oppgave 7 og 8. 
-* Vi har i fellesskap løst oppgave 10. 
+* Mahdi har hatt hovedansvar for oppgave ? og ?. 
+* Harkirat har hatt hovedansvar for oppgave ? og ?. 
+* Ibrahima har hatt hovedansvar for oppgave ? og ?. 
+* Sabasan har hatt hovedansvar for oppgave ? og ?.
+* Hassan har hatt hovedansvar for oppgave 4 og 10. 
+
+* Vi har i fellesskap hjelpet hverandre med oppgavene som vi synes var vanskelige.
 
 # Oppgavebeskrivelse
 
