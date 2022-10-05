@@ -102,19 +102,24 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public void leggInn(int indeks, T verdi) {
+        if(verdi == null){
+            throw new NullPointerException("verdi er null");
+        }
         indeksKontroll(indeks, true);
-        if(indeks>antall){
-            throw new IndexOutOfBoundsException("indeks er ugyldig");
-        }
-        if(indeks<0){
-            throw new IndexOutOfBoundsException("indeks er ugyldig");
-        }
         if(indeks==0){
-            Node<T> forjeverdi = hode;
-            Node<T> verdiNode = new Node<>(verdi);
-            verdiNode.neste = forjeverdi;
-            forjeverdi.forrige = verdiNode;
-            hode = verdiNode;
+            if(antall==0){
+                Node<T> verdiNode = new Node<>(verdi);
+                hode = verdiNode;
+                hode=hale;
+            }
+            else{
+                Node<T> forjeverdi = hode;
+                Node<T> verdiNode = new Node<>(verdi);
+                verdiNode.neste = forjeverdi;
+                hode = verdiNode;
+                forjeverdi.forrige = verdiNode;
+
+            }
         } else if (indeks==antall) {
             Node<T> forjeverdi = hale;
             Node<T> verdiNode = new Node<>(verdi);
@@ -127,6 +132,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             forjeverdi.forrige.neste = verdiNode;
             forjeverdi.forrige = verdiNode;
         }
+        antall++;
+        endringer++;
     }
 
     @Override
