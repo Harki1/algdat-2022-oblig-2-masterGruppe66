@@ -278,8 +278,19 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public void nullstill() {
-        throw new UnsupportedOperationException();
+
+        //metode 1
+        for (Node<T> t = hode; t != null; t=t.neste){
+            t.verdi = null;
+            t.forrige = t.neste = null;
+        }
+
+        hode = hale = null;
+        antall = 0;
+        endringer++;
+
     }
+//jeg velger å bruke metode 1 siden den er mer effektiv
 
     @Override
     public String toString() {
