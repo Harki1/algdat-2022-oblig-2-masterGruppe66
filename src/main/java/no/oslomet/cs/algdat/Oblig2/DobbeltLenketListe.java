@@ -106,18 +106,20 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             throw new NullPointerException("verdi er null");
         }
         indeksKontroll(indeks, true);
+
         if(indeks==0){
             if(antall==0){
                 Node<T> verdiNode = new Node<>(verdi);
                 hode = verdiNode;
+                verdiNode.forrige = null;
                 hode=hale;
             }
             else{
                 Node<T> forjeverdi = hode;
                 Node<T> verdiNode = new Node<>(verdi);
                 verdiNode.neste = forjeverdi;
-                hode = verdiNode;
                 forjeverdi.forrige = verdiNode;
+                hode = verdiNode;
 
             }
         } else if (indeks==antall) {
@@ -126,6 +128,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             forjeverdi.neste = verdiNode;
             verdiNode.forrige = forjeverdi;
             hale = verdiNode;
+            verdiNode.neste = null;
         } else{
             Node<T> forjeverdi = finnNode(indeks);
             Node<T> verdiNode = new Node<>(verdi, forjeverdi.forrige, forjeverdi);
