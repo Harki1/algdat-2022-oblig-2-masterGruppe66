@@ -87,7 +87,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean tom() {
-        if (hode== null){
+        if (hode == null){
         return false;}
         else {
             return true;
@@ -399,7 +399,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     } // class DobbeltLenketListeIterator
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
-        throw new UnsupportedOperationException();
+
+        if (liste == null) {
+            throw new UnsupportedOperationException();
+        }
+
+        for (int i = 0; i < liste.antall() -1; i++) {
+
+            int min_index = i;
+            for (int h = i + 1; h < liste.antall(); h++) {
+
+                if (c.compare(liste.hent(h), liste.hent(min_index)) < 0) {
+                    min_index = h;
+                }
+
+
+
+            }
+
+        }
+
     }
 
 } // class DobbeltLenketListe
