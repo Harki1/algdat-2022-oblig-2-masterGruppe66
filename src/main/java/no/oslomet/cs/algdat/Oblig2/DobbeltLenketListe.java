@@ -413,7 +413,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                     min_index = h;
                 }
 
-
+                T temp = liste.hent(min_index);
+                liste.oppdater(min_index, liste.hent(i));
+                liste.oppdater(i, temp);
 
             }
 
