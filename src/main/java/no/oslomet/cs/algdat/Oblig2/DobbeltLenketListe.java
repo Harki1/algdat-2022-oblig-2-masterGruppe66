@@ -43,23 +43,36 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public DobbeltLenketListe(T[] a) {
-        for (int i = 0; i < a.length; i++){
-
+        if(a.length==0){
+            return;
         }
-        hode = new Node<>(a[0]);
-        antall = 0;
+        if(a == null){
+            throw new NullPointerException("a er null");
+        }
+        int starter = 0;
+        for (int i = 0; i < a.length; i++){
+            if(a[i] != null) {
+                hode = new Node<>(a[i]);
+                starter = i;
+                antall =1;
+                break;
+            }
+        }
+
+
         Node <T> forrige = hode;
-        for (int i = 0; i < a.length; i++){
+        for (int i = starter+1; i < a.length; i++){
             if (a[i] == null){
-                continue;
-            }else{
-            Node<T> j = new Node<>(a[i],forrige,null);
-            forrige.neste = j;
-            forrige = j;
-            antall++;
-                }
 
+            }else{
+                Node<T> j = new Node<>(a[i],forrige,null);
+                forrige.neste = j;
+                forrige = j;
+                antall++;
+            }
         }
+        endringer = 0;
+        hale = forrige;
     }
 
     private void fratilKontroll(int fra, int til){
@@ -88,9 +101,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public boolean tom() {
         if (hode == null){
-        return false;}
+        return true;}
         else {
-            return true;
+            return false;
         }
 
     }
