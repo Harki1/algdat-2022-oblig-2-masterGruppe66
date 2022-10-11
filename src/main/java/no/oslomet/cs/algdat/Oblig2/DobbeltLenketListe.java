@@ -86,7 +86,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         Liste<T> nyliste = new DobbeltLenketListe<>();
         Node<T> current = finnNode(fra);
         for(int i = fra; i<til; i++){
-            nyliste.leggInn(i ,current.verdi);
+            nyliste.leggInn(current.verdi);
             current = current.neste;
         }
 
@@ -119,8 +119,6 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     endringer++;
     return true;
 }
-
-    }
 
     @Override
     public void leggInn(int indeks, T verdi) {
@@ -206,14 +204,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public T oppdater(int indeks, T nyverdi) {
+        if(nyverdi == null){
+            throw new NullPointerException("nyverdi er null");
+        }
+        indeksKontroll(indeks, false);
         Node <T> node = finnNode(indeks);
         T gammelverdi = node.verdi;
-        indeksKontroll(indeks, true);
-        if(gammelverdi != null){
-            node.verdi = nyverdi;
-            endringer++;
-        }
+
+        node.verdi = nyverdi;
+        endringer++;
+
         return gammelverdi;
+
     }
 
     @Override
