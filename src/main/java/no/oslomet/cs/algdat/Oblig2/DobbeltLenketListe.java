@@ -123,15 +123,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             if(antall==0){
                 Node<T> verdiNode = new Node<>(verdi);
                 hode = verdiNode;
-                hode=hale;
+                hale = hode;
             }
             else{
                 Node<T> forjeverdi = hode;
                 Node<T> verdiNode = new Node<>(verdi);
                 verdiNode.neste = forjeverdi;
-                hode = verdiNode;
                 forjeverdi.forrige = verdiNode;
-
+                hode = verdiNode;
             }
         } else if (indeks==antall) {
             Node<T> forjeverdi = hale;
@@ -141,6 +140,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             hale = verdiNode;
         } else{
             Node<T> forjeverdi = finnNode(indeks);
+            System.out.println(forjeverdi.verdi);
             Node<T> verdiNode = new Node<>(verdi, forjeverdi.forrige, forjeverdi);
             forjeverdi.forrige.neste = verdiNode;
             forjeverdi.forrige = verdiNode;
@@ -148,6 +148,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         antall++;
         endringer++;
     }
+
 
     @Override
     public boolean inneholder(T verdi) {
@@ -165,12 +166,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
         else{
             Node<T> current = hale;
-            for(int i = 0; i<(antall-indeks);i++){
+            for(int i = antall-1; i>indeks;i--){
                 current = current.forrige;
             }
             return current;
         }
     }
+
     @Override
     public T hent(int indeks) {
         indeksKontroll(indeks, false);
