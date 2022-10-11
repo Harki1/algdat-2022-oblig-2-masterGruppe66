@@ -12,7 +12,7 @@ Oppgaven er levert av følgende studenter:
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
 * Mahdi har hatt hovedansvar for oppgave ? og ?. 
-* Harkirat har hatt hovedansvar for oppgave ? og ?. 
+* Harkirat har hatt hovedansvar for oppgave 3 og 5. 
 * Ibrahima har hatt hovedansvar for oppgave ? og ?. 
 * Sabasan har hatt hovedansvar for oppgave ? og ?.
 * Hassan har hatt hovedansvar for oppgave 4 og 10. 
@@ -24,6 +24,8 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 I oppgave 1 så gikk vi frem ved å ...
 
 I oppgave 2 så brukte vi en ... til å ...
+
+I oppgave 3 
 
 
 I Oppgave 4 brukte vi først et if-statement som da returnerer "-1" hvis verdien da er lik "null". Deretter bestemte vi oss for å lage en for løkke som looper gjennom verdiene for å sjekke om "p.verdi" blir det samme som verdi, og som da skal returnere indeksen hvis dette er tilfellet, hvis ikke så returnerer den fremdeles -1.
