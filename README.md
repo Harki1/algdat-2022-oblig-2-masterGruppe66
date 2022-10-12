@@ -31,7 +31,7 @@ I Oppgave 4 brukte vi først et if-statement som da returnerer "-1" hvis verdien
 
 I oppgave 5 så lagde vi først sjekker for om den verdien som skal legges inn er null, og trower en exeption om det er det. Etter det sjekker vi om verdien skal legges foran (indeks = 0) bakerst (indeks = antall) eller mellom to verdier. Og forsikrer om at pekerene blir riktige. og vi øker antall og endringer om det blir lagt til noe. Vi bruker finnNode(indeks), for å finne den noden som er der vi vil legge inn den nye verdien, også dytter vi de verdiene etter ett hakk til høyre, og legger inn den nye verdien.
 
-I oppgave 6 så brukte vi en ... til å ...
+I oppgave 6 så brukte vi metoden fjern (Int indeks) for å fjerne verdi, fra noden og definere den. Ved bruk av forloop og if setninger oppbygde vi dette, men metoden boolean fjern skulle metoden fjerne og returnere true. Sjekklisten innebar blantannet at det er korekt viss listen er tom.
 
 I oppgave 7 bruker vi void nullstill() metode som nuller og tømmer nodens nodeverdier. Vi innser at metode 1 er mer effektiv. Vi tømmer ved å starte fra "hode"
  til "hale" ved hjelp av neste pekeren. Vi setter dermed p.neste = q.neste = null og endringen økes.  
