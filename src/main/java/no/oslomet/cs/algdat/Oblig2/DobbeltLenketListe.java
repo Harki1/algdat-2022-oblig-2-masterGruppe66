@@ -159,8 +159,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean inneholder(T verdi) {
-        throw new UnsupportedOperationException();
-
+        int retur = indeksTil(verdi);
+        return retur != -1;
     }
 
     private Node<T> finnNode(int indeks){
