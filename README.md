@@ -14,7 +14,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 * Mahdi har hatt hovedansvar for oppgave ? og ?. 
 * Harkirat har hatt hovedansvar for oppgave 3 og 5. 
 * Ibrahima har hatt hovedansvar for oppgave 1 og 6. 
-* Sabasan har hatt hovedansvar for oppgave ? og ?.
+* Sabasan har hatt hovedansvar for oppgave 2 og 7.
 * Hassan har hatt hovedansvar for oppgave 4 og 10. 
 
 * Vi har i fellesskap hjelpet hverandre med oppgavene som vi synes var vanskelige.
