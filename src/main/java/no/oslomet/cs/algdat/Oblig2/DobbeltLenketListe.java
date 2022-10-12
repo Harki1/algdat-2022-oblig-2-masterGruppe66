@@ -221,85 +221,65 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        if (verdi == null){
+        if (verdi == null) {
             return false;
         }
-        Node <T> a = hode;
-        Node <T> b;
-        Node <T> c;
-        for (int i = 0; i < antall; i++){
-
-            while (a.verdi.equals(verdi)){
-                if (antall == 1){
-                    hode = hale;
-                    hale = null;
-                    break;
-                }
-                if (i == 0){
-                    a = a.neste;
-                    a.forrige = null;
-                    hode = a;
-                    break;
-                }
-                else if (i < antall - 1){
-
-                    a = a.forrige;
-                    b = a.neste;
-                    c = b.neste;
-
-                    a.neste = c;
-                    c.forrige = a;
-
-                    break;
-
-                }else {
-                    b = a.forrige;
-                    b.neste = null;
-                    hale = b;
-                    break;
-                }
+        Node <T> node = hode;
+        int i;
+        for (i =0; i < antall; i++, node = node.neste) {
+            if (node.verdi.equals(verdi)) {
+                break;
             }
-            if (i == antall - 1){
-                return false;
-            }
-            a = a.neste;
+        }
+        if(i==antall){
+            return false;
+        }
+        if (antall == 1) {
+            hode = null;
+            hale = null;
+        }
+        else if (node.neste == null){
+            hale.forrige.neste = null;
+            hale = hale.forrige;
+        }
+        else if (node == hode){
+            node.neste.forrige = null;
+            hode = hode.neste;
+        }
+        else {
+            node.forrige.neste = node.neste;
+            node.neste.forrige = node.forrige;
         }
         antall --;
-        endringer++;
+        endringer ++;
 
         return true;
     }
-
     @Override
     public T fjern(int indeks) {
         indeksKontroll(indeks, false);
-        T verdiUt;
-        while (indeks == 0){
+        Node <T> node = finnNode(indeks);
+        T verdiUt = node.verdi;
 
-            if (antall == 1){
-                verdiUt = hode.verdi;
-                hale = hode;
-                hode = null;
-            }else{
-                verdiUt = hode.verdi;
-                hode = hode.neste;
-                hode.forrige = null;
-            }
+        if (antall == 1) {
+            hode = null;
+            hale = null;
         }
-        if (indeks == antall -1 ){
-            verdiUt = hale.verdi;
+        else if (node.neste == null){
+            hale.forrige.neste = null;
             hale = hale.forrige;
-            hale.neste = null;
-        }else {
-            Node<T> a = finnNode(indeks - 1);
-            Node<T> b = a.neste;
-            Node<T> c = b.neste;
-            verdiUt = b.verdi;
-            a.neste = c;
-            c.forrige = a;
         }
-        antall--;
-        endringer++;
+        else if (node == hode){
+            node.neste.forrige = null;
+            hode = hode.neste;
+        }
+        else {
+            node.forrige.neste = node.neste;
+            node.neste.forrige = node.forrige;
+        }
+        antall --;
+        endringer ++;
+
         return verdiUt;
     }
 
