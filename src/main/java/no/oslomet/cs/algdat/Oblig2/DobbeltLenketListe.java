@@ -189,16 +189,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int indeksTil(T verdi) {
+
         if (verdi == null) {
+
+
             return -1;
         }
 
-        Node <T> p = hode;
+        Node<T> p = hode;
 
-        for (int i =0; i < antall; i++, p = p.neste) {
-            if (p.verdi.equals(verdi))
+        for(int i = 0; i <antall; i ++){
+
+            if(p.verdi.equals(verdi)){
+
                 return i;
+            }
+
+            p =  p.neste;
         }
+
+
         return -1;
     }
 
@@ -435,15 +445,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             int min_index = i;
             for (int h = i + 1; h < liste.antall(); h++) {
 
-                if (c.compare(liste.hent(h), liste.hent(min_index)) < 0) {
+                if (c.compare(liste.hent(h), liste.hent(min_index)) < 0)
                     min_index = h;
-                }
+
+
+            }
+
 
                 T temp = liste.hent(min_index);
                 liste.oppdater(min_index, liste.hent(i));
                 liste.oppdater(i, temp);
 
-            }
+
 
         }
 
