@@ -23,7 +23,7 @@ I oppgaven har vi hatt følgende arbeidsfordeling:
 
 I oppgave 1 så gikk vi frem ved å gjøre om tabellen a til en dobbel lenket liste ved å utføre en for-loops. 
 
-I oppgave 2 så brukte vi en ... til å ...
+I oppgave 2 så brukte vi en toString() metode til å returne er tegnstreng med alle listens verdier, med "[""]" rundt tallene, f.eks. hvis verdiene er "1", "2" og "3" så får man "[1,2,3]" og tom hvis den er tom. For å traversere listens verdier bruker vi en Stringbuilder. Deretter bruker vi en omvendtString() og får det samme bare i omvendt rekkefølge slik at vi får vite at pekeren er satt rikitg. I 2b bruker vi boolean leggInn metode for å legge inn en node med oppgitte verdier bakerst i listen og returnere true.    
 
 I oppgave 3 så lagde vi først hjelpe metoden finnNode til å finne noden. Dette gjorde vi ved å først sjekke om indeksen var i første eller andre halvdel av Dobbellenket liste, slik at det ble mer effektivt. Også lagde vi hent for å finne verdien. Også lagde vi oppdater, først sjekker vi om den nye verdien er null og om den er det trower vi en exeption, også sjekker vi indeksen med indeksKontroll. Også finner vi noden i den indeksen og endrer den til ned nye verdien og returnerer den gamle. Også lagde vi subliste, som lager en kopi av en del av en Dobbellenket liste.
 
@@ -33,4 +33,7 @@ I oppgave 5 så lagde vi først sjekker for om den verdien som skal legges inn e
 
 I oppgave 6 så brukte vi en ... til å ...
 
+I oppgave 7 bruker vi void nullstill() metode som nuller og tømmer nodens nodeverdier. Vi innser at metode 1 er mer effektiv. Vi tømmer ved å starte fra "hode"
+ til "hale" ved hjelp av neste pekeren. Vi setter dermed p.neste = q.neste = null og endringen økes.  
+ 
 I Oppgave 10 brukte vi en rekke byggeklosser innen java for å løse oppgaven. Vi brukte først og fremst en for løkke som looper gjennom listen, og enda en for løkke som da er inni den første. deretter ble det brukt en if-setning som da bruker kommando "compare" for å da sjekke om verdiene er mindre enn 0, og om disse er det, så får "min_verdi" en ny verdi. Etter dette brukes variabelen temp til å oppdatere listen ved hjelp av "liste.oppdater".
