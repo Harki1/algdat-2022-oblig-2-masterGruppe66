@@ -11,7 +11,7 @@ Oppgaven er levert av følgende studenter:
 # Arbeidsfordeling
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
-* Mahdi har hatt hovedansvar for oppgave ? og ?. 
+* Mahdi har hatt hovedansvar for oppgave 8 og 9. 
 * Harkirat har hatt hovedansvar for oppgave 3 og 5. 
 * Ibrahima har hatt hovedansvar for oppgave 1 og 6. 
 * Sabasan har hatt hovedansvar for oppgave 2 og 7.
@@ -36,4 +36,8 @@ I oppgave 6 så brukte vi en ... til å ...
 I oppgave 7 bruker vi void nullstill() metode som nuller og tømmer nodens nodeverdier. Vi innser at metode 1 er mer effektiv. Vi tømmer ved å starte fra "hode"
  til "hale" ved hjelp av neste pekeren. Vi setter dermed p.neste = q.neste = null og endringen økes.  
  
+I Oppgave 8 brukte vi lagde vi T Next() fordi den flytter noden en fram så den skal først sjekke om iteratorendringer er lik endringer. I oppgave 8a brukte vi ConcurrentModificationException og NoSuchElementException dersom den ikke var lik endringen. jeg gjorde også iterator(), Den lager objektet og retunerer det sammen med iterator(indeks), vi sjekket først om den var lovlig eller ikke. Denne skulle også returneres med engang. I oppgave 8a brukte vi ConcurrentModificationException og NoSuchElementException dersom den ikke var lik endringen.
+
+I oppgave 9 lagde vi metoden void remove() i iteratorklassen, vi kunne ikke bruke de valige fjern-metodene så vi måtte kode det direkte. Vi lagde en for eneste verdien slik at hode og halen nuller seg. Derettter så skulle den ene som skulle fjernes var halen, etter det så første. Og sist og ikke minst så skulle vi fjerne en node. Til slutt så skulle antall reduseres, itratorendringer skal økes og endringer økes. 
+
 I Oppgave 10 brukte vi en rekke byggeklosser innen java for å løse oppgaven. Vi brukte først og fremst en for løkke som looper gjennom listen, og enda en for løkke som da er inni den første. deretter ble det brukt en if-setning som da bruker kommando "compare" for å da sjekke om verdiene er mindre enn 0, og om disse er det, så får "min_verdi" en ny verdi. Etter dette brukes variabelen temp til å oppdatere listen ved hjelp av "liste.oppdater".
